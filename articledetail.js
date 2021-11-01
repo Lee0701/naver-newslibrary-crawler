@@ -10,7 +10,8 @@ const filename = 'article'
 const baseUrl = 'https://newslibrary.naver.com/api/article/detail/json'
 const delay = 500
 
-const sleep = (t) => new Promise(resolve=>setTimeout(resolve,t))
+const sleep = (t) => new Promise((resolve) => setTimeout(resolve, t))
+
 ;
 
 (async () => {

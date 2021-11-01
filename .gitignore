@@ -1,5 +1,5 @@
 node_modules/
 
 out
-merged.txt
-preprocessed.txt
+merged*.txt
+preprocessed*.txt

@@ -2,7 +2,7 @@
 const fs = require('fs')
 const path = require('path')
 
-const indir = './out/jungang_1969/article'
+const indir = './out/jungang_1979'
 
 const result = fs.readdirSync(indir).filter((name) => {
     return name.startsWith('article_') && name.endsWith('.json')
