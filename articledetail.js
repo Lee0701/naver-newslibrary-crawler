@@ -8,6 +8,7 @@ const outDir = './out'
 const filename = 'article'
 
 const baseUrl = 'https://newslibrary.naver.com/api/article/detail/json'
+const delay = 500
 
 const sleep = (t) => new Promise(resolve=>setTimeout(resolve,t))
 ;
@@ -21,24 +22,31 @@ const sleep = (t) => new Promise(resolve=>setTimeout(resolve,t))
         console.log(date)
 
         Promise.all(data.articles.article.map(async (article) => {
-            const res = await p({
-                url: baseUrl,
-                method: 'POST',
-                form: {
-                    articleId: article.articleId,
-                    detailCode: '1001000001000000000001101100000000000000000',
-                    urlKey: 'articleDetail',
-                    viewID: 'app_articleDetail',
-                    requestId: (i + 1).toString(),
-                    target: 'viewer'
-                },
-                parse: 'json'
-            })
+            let res = null
+            while(res == null) {
+                try {
+                    res = await p({
+                        url: baseUrl,
+                        method: 'POST',
+                        form: {
+                            articleId: article.articleId,
+                            detailCode: '1001000001000000000001101100000000000000000',
+                            urlKey: 'articleDetail',
+                            viewID: 'app_articleDetail',
+                            requestId: (i + 1).toString(),
+                            target: 'viewer'
+                        },
+                        parse: 'json'
+                    })
+                } catch(e) {
+                    console.error(e)
+                }
+            }
             return [article.articleId, res.body.result]
         })).then((result) => {
             const outFile = path.join(outDir, `${filename}_${officeId}_${date}.json`)
             fs.writeFileSync(outFile, JSON.stringify(Object.fromEntries(result)))
-            sleep(500).then(() => done())
+            sleep(delay).then(() => done())
         })
     })
 

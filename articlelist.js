@@ -5,7 +5,7 @@ const path = require('path')
 
 const outDir = './out'
 const filename = 'articlelist'
-const infile = 'printlist_00023_1969-02-01_1969-12-31.json'
+const infile = 'printlist_00020_1969-01-01_1969-12-31.json'
 
 const baseUrl = 'https://newslibrary.naver.com/api/article/list/json'
 
