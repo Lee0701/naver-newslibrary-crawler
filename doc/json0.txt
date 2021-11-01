@@ -1,0 +1,11 @@
+GET
+	
+scheme
+	https
+host
+	newslibrary.naver.com
+filename
+	/api/summary/publishedDate/json
+
+
+{"result":{"startDate":"1979-10-28","endDate":"1979-12-08","newsPublisheds":{"newsPublished":[{"publishDate":"1979-10-28","isPublished":"true"},{"publishDate":"1979-10-29","isPublished":"true"},{"publishDate":"1979-10-30","isPublished":"true"},{"publishDate":"1979-10-31","isPublished":"true"},{"publishDate":"1979-11-01","isPublished":"true"},{"publishDate":"1979-11-02","isPublished":"true"},{"publishDate":"1979-11-03","isPublished":"true"},{"publishDate":"1979-11-04","isPublished":"true"},{"publishDate":"1979-11-05","isPublished":"true"},{"publishDate":"1979-11-06","isPublished":"true"},{"publishDate":"1979-11-07","isPublished":"true"},{"publishDate":"1979-11-08","isPublished":"true"},{"publishDate":"1979-11-09","isPublished":"true"},{"publishDate":"1979-11-10","isPublished":"true"},{"publishDate":"1979-11-11","isPublished":"true"},{"publishDate":"1979-11-12","isPublished":"true"},{"publishDate":"1979-11-13","isPublished":"true"},{"publishDate":"1979-11-14","isPublished":"true"},{"publishDate":"1979-11-15","isPublished":"true"},{"publishDate":"1979-11-16","isPublished":"true"},{"publishDate":"1979-11-17","isPublished":"true"},{"publishDate":"1979-11-18","isPublished":"true"},{"publishDate":"1979-11-19","isPublished":"true"},{"publishDate":"1979-11-20","isPublished":"true"},{"publishDate":"1979-11-21","isPublished":"true"},{"publishDate":"1979-11-22","isPublished":"true"},{"publishDate":"1979-11-23","isPublished":"true"},{"publishDate":"1979-11-24","isPublished":"true"},{"publishDate":"1979-11-25","isPublished":"true"},{"publishDate":"1979-11-26","isPublished":"true"},{"publishDate":"1979-11-27","isPublished":"true"},{"publishDate":"1979-11-28","isPublished":"true"},{"publishDate":"1979-11-29","isPublished":"true"},{"publishDate":"1979-11-30","isPublished":"true"},{"publishDate":"1979-12-01","isPublished":"true"},{"publishDate":"1979-12-02","isPublished":"true"},{"publishDate":"1979-12-03","isPublished":"true"},{"publishDate":"1979-12-04","isPublished":"true"},{"publishDate":"1979-12-05","isPublished":"true"},{"publishDate":"1979-12-06","isPublished":"true"},{"publishDate":"1979-12-07","isPublished":"true"},{"publishDate":"1979-12-08","isPublished":"true"}]}}}

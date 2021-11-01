@@ -1,0 +1,26 @@
+POST
+	
+scheme
+	https
+host
+	newslibrary.naver.com
+filename
+	/api/page/list/json
+
+
+startDate	"1979-11-01"
+publishType	"00020"
+printNo	"17869"
+listLevel	"3"
+detailYn	"false"
+officeId	"00020"
+detailCode	"10000111100110000001"
+startPageNo	"1"
+pageCount	"1"
+urlKey	"testData"
+viewID	"app_paperInfo"
+requestID	"2"
+target	"viewer"
+
+
+{"result":{"startDate":"1979-11-01","officeId":"00020","printNo":"17869","startPageNo":"1","pageCount":"1","listLevel":"3","excludeMissingPage":"false","detailCode":"10000111100110000001","datePages":{"datePage":[{"date":"1979-11-01","officePages":{"officePage":[{"officeId":"00020","regularPrint":{"printCount":"1","pageCount":"8","articleCount":"189","publishType":"00020","prints":{"print":[{"horizontalWritingYn":"false","pageCount":"8","articleCount":"189","printNo":"17869","editNo":"2","publishType":"00020","maxHorizontalLength":"351","pages":{"page":[{"officeId":"00020","printNo":"17869","editNo":"2","pageNo":"1","pageSection":"00010","pageState":"00000","horizontalLength":"4900","verticalLength":"6700"}]}}]}}}]}}]}}}

@@ -1,0 +1,19 @@
+POST
+	
+scheme
+	https
+host
+	newslibrary.naver.com
+filename
+	/api/page/list/json
+
+
+startDate	"1979-11-01"
+officeId	"00020"
+listLevel	"2"
+urlKey	"newsData"
+viewID	"app_newsInfo"
+requestID	"1"
+
+
+{"result":{"startDate":"1979-11-01","officeId":"00020","listLevel":"2","excludeMissingPage":"false","datePages":{"datePage":[{"date":"1979-11-01","officePages":{"officePage":[{"officeId":"00020","regularPrint":{"printCount":"1","pageCount":"8","articleCount":"189","publishType":"00020","prints":{"print":[{"horizontalWritingYn":"false","pageCount":"8","articleCount":"189","printNo":"17869","editNo":"2","publishType":"00020","maxHorizontalLength":"351"}]}}}]}}]}}}

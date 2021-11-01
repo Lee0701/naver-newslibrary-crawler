@@ -1,0 +1,19 @@
+{
+  "name": "newslibrary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "block-queue": "^0.0.2",
+    "phin": "^3.6.0"
+  }
+}
