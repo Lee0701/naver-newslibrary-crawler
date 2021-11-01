@@ -3,13 +3,13 @@ const p = require('phin')
 const fs = require('fs')
 const path = require('path')
 
-const outDir = './out'
+const outDir = './out/jungang_1979'
 const filename = 'printlist'
 
 const baseUrl = 'https://newslibrary.naver.com/api/page/list/json'
 
-const startDate = '1969-01-01'
-const endDate = '1969-12-31'
+const startDate = '1979-01-01'
+const endDate = '1979-12-31'
 const officeId = '00020'
 
 const getPrints = (body) => body.result.datePages.datePage[0].officePages.officePage[0].regularPrint.prints
