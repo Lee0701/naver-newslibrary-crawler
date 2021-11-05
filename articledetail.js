@@ -4,7 +4,9 @@ const fs = require('fs')
 const path = require('path')
 const queue = require('block-queue')
 
-const outDir = './out/jungang_1979'
+const year = 1960
+
+const outDir = `./out/jungang_${year}`
 const filename = 'article'
 
 const baseUrl = 'https://newslibrary.naver.com/api/article/detail/json'

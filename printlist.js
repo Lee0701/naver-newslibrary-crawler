@@ -3,13 +3,15 @@ const p = require('phin')
 const fs = require('fs')
 const path = require('path')
 
-const outDir = './out/jungang_1979'
+const year = 1960
+
+const outDir = `./out/jungang_${year}`
 const filename = 'printlist'
 
 const baseUrl = 'https://newslibrary.naver.com/api/page/list/json'
 
-const startDate = '1979-01-01'
-const endDate = '1979-12-31'
+const startDate = `${year}-01-01`
+const endDate = `${year}-12-31`
 const officeId = '00020'
 
 const getPrints = (body) => body.result.datePages.datePage[0].officePages.officePage[0].regularPrint.prints
@@ -22,6 +24,7 @@ const dateFormat = (millis) => {
 ;
 
 (async () => {
+    fs.mkdirSync(outDir)
     const outFile = path.join(outDir, `${filename}_${officeId}_${startDate}_${endDate}.json`)
 
     const result = {

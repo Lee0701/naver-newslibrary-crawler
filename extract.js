@@ -2,9 +2,11 @@
 const fs = require('fs')
 const path = require('path')
 
-const indir = './out/jungang_1962'
-
+const year = 1960
 const translatedContent = true
+
+const indir = `./out/jungang_${year}`
+const outFile = 'extracted' + (translatedContent ? '-translated.txt' : '.txt')
 
 const getContent = (article) => article.article.content
 const getTranslatedContent = (article) => article.article.translatedContent
@@ -18,4 +20,4 @@ const result = fs.readdirSync(indir).filter((name) => {
     return Object.values(data).map((article) => translatedContent ? getTranslatedContent(article) : getContent(article))
 })
 
-fs.writeFileSync('merged-translated.txt', result.join('\n\n'))
+fs.writeFileSync(outFile, result.join('\n\n'))
