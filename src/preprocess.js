@@ -1,6 +1,8 @@
 
 const fs = require('fs')
 
+const year = parseInt(process.argv[2])
+
 const preprocess = (inFile, outFile) => {
     const replaceEntities = (str) => {
             return str.replace(/&lt;/g, '<').replace(/&gt;/g, '>')
@@ -16,8 +18,6 @@ const preprocess = (inFile, outFile) => {
 
     fs.writeFileSync(outFile, processedLines.join('\n'))
 }
-
-const year = 1960
 
 preprocess('extracted.txt', 'preprocessed.txt')
 preprocess(`extracted-translated-${year}.txt`, `preprocessed-translated-${year}.txt`)

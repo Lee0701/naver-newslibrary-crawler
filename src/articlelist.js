@@ -3,7 +3,7 @@ const p = require('phin')
 const fs = require('fs')
 const path = require('path')
 
-const year = 1960
+const year = parseInt(process.argv[2])
 
 const outDir = `./out/jungang_${year}`
 const filename = 'articlelist'
