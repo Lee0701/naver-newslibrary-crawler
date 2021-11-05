@@ -1,7 +1,7 @@
 
 const fs = require('fs')
 
-const year = 1960
+const year = parseInt(process.argv[2])
 
 const similarity = (a, b) => a.split('').map((c, i) => c != b.charAt(i) ? 1 : 0).reduce((a, c) => a + c) / a.length
 

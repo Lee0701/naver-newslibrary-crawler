@@ -19,5 +19,5 @@ const preprocess = (inFile, outFile) => {
     fs.writeFileSync(outFile, processedLines.join('\n'))
 }
 
-preprocess('extracted.txt', 'preprocessed.txt')
-preprocess(`extracted-translated-${year}.txt`, `preprocessed-translated-${year}.txt`)
+preprocess(`extracted.txt`, `preprocessed-${year}.txt`)
+preprocess(`extracted-translated.txt`, `preprocessed-translated-${year}.txt`)
