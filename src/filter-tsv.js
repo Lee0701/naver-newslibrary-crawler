@@ -13,3 +13,11 @@ const long = filtered.filter((line) => line.length / 2 >= 100)
 const short = filtered.filter((line) => line.length / 2 < 100)
 fs.writeFileSync(`jungang-${year}-filtered-long.tsv`, long.join('\n'))
 fs.writeFileSync(`jungang-${year}-filtered-short.tsv`, short.join('\n'))
+
+const hanja = filtered
+        .map((line) => line.split('\t')[1])
+        .map((line) => line.replace(/○/g, '〇'))
+        .flatMap((line) => line.replace(/[■-◿]/g, '\n').split('\n'))
+        .filter((line) => line.trim())
+
+fs.writeFileSync(`filtered-${year}.txt`, hanja.join('\n'))
