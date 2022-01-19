@@ -9,9 +9,11 @@ const lines = fs.readFileSync(`jungang-${year}.tsv`).toString().split('\n').map(
 const filtered = lines
         .filter(([hangul, hanja]) => similarity(hangul, hanja) >= 0.5)
         .map((line) => line.join('\t'))
-const long = filtered.filter((line) => line.length / 2 >= 100)
+const long = filtered.filter((line) => line.length / 2 >= 300)
+const medium = filtered.filter((line) => line.length / 2 >= 100 && line.length / 2 < 300)
 const short = filtered.filter((line) => line.length / 2 < 100)
 fs.writeFileSync(`jungang-${year}-filtered-long.tsv`, long.join('\n'))
+fs.writeFileSync(`jungang-${year}-filtered-medium.tsv`, medium.join('\n'))
 fs.writeFileSync(`jungang-${year}-filtered-short.tsv`, short.join('\n'))
 
 const hanja = filtered

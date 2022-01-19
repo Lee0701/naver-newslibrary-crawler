@@ -10,7 +10,7 @@ const outDir = `./out/jungang_${year}`
 const filename = 'article'
 
 const baseUrl = 'https://newslibrary.naver.com/api/article/detail/json'
-const delay = 500
+const delay = 100
 
 const sleep = (t) => new Promise((resolve) => setTimeout(resolve, t))
 
