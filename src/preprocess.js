@@ -1,7 +1,9 @@
 
 const fs = require('fs')
 
-const year = parseInt(process.argv[2])
+const workspace = 'workspace'
+const name = process.argv[2]
+const year = parseInt(process.argv[3])
 
 const preprocess = (inFile, outFile) => {
     const replaceEntities = (str) => {
@@ -19,5 +21,5 @@ const preprocess = (inFile, outFile) => {
     fs.writeFileSync(outFile, processedLines.join('\n'))
 }
 
-preprocess(`extracted-${year}.txt`, `preprocessed-${year}.txt`)
-preprocess(`extracted-translated-${year}.txt`, `preprocessed-translated-${year}.txt`)
+preprocess(`./${workspace}/${name}-extracted-${year}.txt`, `./${workspace}/${name}-preprocessed-${year}.txt`)
+preprocess(`./${workspace}/${name}-extracted-translated-${year}.txt`, `./${workspace}/${name}-preprocessed-translated-${year}.txt`)

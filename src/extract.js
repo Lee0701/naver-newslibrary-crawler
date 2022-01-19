@@ -2,7 +2,9 @@
 const fs = require('fs')
 const path = require('path')
 
-const year = parseInt(process.argv[2])
+const workspace = 'workspace'
+const name = process.argv[2]
+const year = parseInt(process.argv[3])
 
 const extract = (indir, outFile, translatedContent) => {
     const getContent = (article) => article.article.content.normalize('NFC')
@@ -22,5 +24,5 @@ const extract = (indir, outFile, translatedContent) => {
 
 }
 
-extract(`./out/jungang_${year}`, `extracted-${year}.txt`, false)
-extract(`./out/jungang_${year}`, `extracted-translated-${year}.txt`, true)
+extract(`./out/${name}_${year}`, `./${workspace}/${name}-extracted-${year}.txt`, false)
+extract(`./out/${name}_${year}`, `./${workspace}/${name}-extracted-translated-${year}.txt`, true)
