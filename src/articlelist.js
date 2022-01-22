@@ -3,11 +3,13 @@ const p = require('phin')
 const fs = require('fs')
 const path = require('path')
 
-const year = parseInt(process.argv[2])
+const name = process.argv[2]
+const year = parseInt(process.argv[3])
+const officeId = process.argv[4]
 
-const outDir = `./out/jungang_${year}`
+const outDir = `./out/${name}_${year}`
 const filename = 'articlelist'
-const infile = `printlist_00020_${year}-01-01_${year}-12-31.json`
+const infile = `printlist_${officeId}_${year}-01-01_${year}-12-31.json`
 
 const baseUrl = 'https://newslibrary.naver.com/api/article/list/json'
 

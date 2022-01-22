@@ -11,6 +11,8 @@ const lines = fs.readFileSync(`./${workspace}/${name}-${year}.tsv`).toString().s
 const filtered = lines
         .filter(([hangul, hanja]) => similarity(hangul, hanja) >= 0.5)
         .map((line) => line.join('\t'))
+const unfiltered = lines
+        .map((line) => line.join('\t'))
 // const long = filtered.filter((line) => line.length / 2 >= 300)
 // const medium = filtered.filter((line) => line.length / 2 >= 100 && line.length / 2 < 300)
 // const short = filtered.filter((line) => line.length / 2 < 100)
@@ -18,12 +20,16 @@ const filtered = lines
 // fs.writeFileSync(`jungang-${year}-filtered-medium.tsv`, medium.join('\n'))
 // fs.writeFileSync(`jungang-${year}-filtered-short.tsv`, short.join('\n'))
 
-// const hanja = filtered
-//         .map((line) => line.split('\t')[1])
-//         .map((line) => line.replace(/○/g, '〇'))
-//         .flatMap((line) => line.replace(/[■-◿]/g, '\n').split('\n'))
-//         .filter((line) => line.trim())
+const postprocess = (lines) => lines
+        .map((line) => line.split('\t')[1])
+        .map((line) => line.replace(/○/g, '〇'))
+        .flatMap((line) => line.replace(/[■-◿]/g, '\n').split('\n'))
+        .filter((line) => line.trim())
 
-// fs.writeFileSync(`filtered-${year}.txt`, hanja.join('\n'))
+const hanja = postprocess(filtered)
+const hanjaUnfiltered = postprocess(unfiltered)
+
+fs.writeFileSync(`./${workspace}/${name}-filtered-${year}.txt`, hanja.join('\n'))
+fs.writeFileSync(`./${workspace}/${name}-unfiltered-${year}.txt`, hanjaUnfiltered.join('\n'))
 
 fs.writeFileSync(`./${workspace}/${name}-filtered-${year}.tsv`, filtered.join('\n'))

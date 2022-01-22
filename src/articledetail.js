@@ -4,9 +4,10 @@ const fs = require('fs')
 const path = require('path')
 const queue = require('block-queue')
 
-const year = parseInt(process.argv[2])
+const name = process.argv[2]
+const year = parseInt(process.argv[3])
 
-const outDir = `./out/jungang_${year}`
+const outDir = `./out/${name}_${year}`
 const filename = 'article'
 
 const baseUrl = 'https://newslibrary.naver.com/api/article/detail/json'
