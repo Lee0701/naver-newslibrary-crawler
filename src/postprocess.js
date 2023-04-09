@@ -56,6 +56,7 @@ const postprocess = (line) => {
 
 rl.on('line', (line) => {
     const postprocessed = postprocess(line)
+
     writer.write(postprocessed + '\n')
     // if(line == postprocessed) return
     // console.log(line)
